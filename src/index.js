@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-import TodoContainer from "./components/TodoContainer"
+import React from "react";
+import ReactDOM from "react-dom";
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-ReactDOM.render( < TodoContainer / > , document.getElementById("root"))
+import { BrowserRouter as Router } from "react-router-dom";
+
+// component
+import TodoContainer from "./components/TodoContainer";
+
+// stylesheet
+import "./functionBased/App.css";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Router basename={process.env.PUBLIC_URL}>
+      <TodoContainer />
+    </Router>{" "}
+  </React.StrictMode>,
+  document.getElementById("root")
+);
